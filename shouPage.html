@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>去重数据查看</title>
+        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    </head>
+    <body>
+        <div id="app" style="text-align: center;width: 80%;border: 2px solid #999; border-radius: 5px;padding: 10px; margin: 0 auto;">
+            <input type="file" id="files" @change="handleFiles" accept="application/json" />
+            <hr />
+            <div id="multilevelList">
+                <el-tree :data="showData" :props="defaultProps"></el-tree>
+            </div>
+        </div>
+    </body>
+    <script src="https://cdn.bootcss.com/vue/2.5.2/vue.min.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script>
+        new Vue({
+          el: '#app',
+          data: function() {
+            return { 
+                visible: false,
+                finalResult: {},
+                htmlStr: '',
+                showData: [],
+                defaultProps: {
+                    children:'children',
+                    label: this.treeNodeLabel
+                }
+            }
+          },
+          mounted() {
+
+          },
+          methods: {
+            // 获取JSON数据
+            handleFiles(file) {
+                let reader = new FileReader()
+                reader.readAsText(file.currentTarget.files[0])
+                reader.onload = (res) => {
+                    this.finalResult = JSON.parse(res.currentTarget.result)
+                    this.createList()
+                }
+            },
+            // 将JSON数据转化成tree数据
+            createList(res) {
+                let listBox = document.getElementById("multilevelList")
+                let first_result = []
+                for (const first_key in this.finalResult) {
+                    let secend_value = this.finalResult[first_key]
+                    let secend_result = []
+                    for (const secend_key in secend_value) {
+                        secend_result.push({
+                            label: secend_key,
+                            children: secend_value[secend_key].map(item => {
+                                return { label: item }
+                            })
+                        })
+                    }
+                    first_result.push({
+                        label: first_key,
+                        children:secend_result
+                    })
+                }
+                this.showData = first_result
+                console.log(first_result)
+            },
+            // 在label上添加子节点数量展示
+            treeNodeLabel(data, node) {
+                let num = data.children && data.children.length ? `(${data.children.length})` : ''
+                return `${data.label}${num}`
+            }
+          }
+        })
+      </script>
+</html>
