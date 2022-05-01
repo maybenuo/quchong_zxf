@@ -3,6 +3,14 @@
     <head>
         <title>去重数据查看</title>
         <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+        <style>
+            table {
+                margin: 0 auto;
+            }
+            th, td {
+                border: 1px solid #999;
+            }
+        </style>
     </head>
     <body>
         <div id="app" style="text-align: center;width: 80%;border: 2px solid #999; border-radius: 5px;padding: 10px; margin: 0 auto;">
@@ -11,11 +19,16 @@
             <div id="multilevelList">
                 <el-tree :data="showData" :props="defaultProps"></el-tree>
             </div>
+            <hr />
+            <el-button @click="createTable" :disabled="!canGenerateTabel" size="small" icon="el-icon-box">生成table</el-button>
+            <div id="multiTabel" style="margin-top: 8px;"></div>
         </div>
     </body>
     <script src="https://cdn.bootcss.com/vue/2.5.2/vue.min.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="./node_modules/json5-to-table.js"></script>
     <script>
+        // import { jsonToHTMLTable } from "./node_modules/json5-to-table.js"
         new Vue({
           el: '#app',
           data: function() {
@@ -32,6 +45,11 @@
           },
           mounted() {
 
+          },
+          computed: {
+            canGenerateTabel() {
+                return this.showData.length && this.showData.length > 0
+            }
           },
           methods: {
             // 获取JSON数据
@@ -70,6 +88,13 @@
             treeNodeLabel(data, node) {
                 let num = data.children && data.children.length ? `(${data.children.length})` : ''
                 return `${data.label}${num}`
+            },
+            // 将JSON数据转化成html table
+            createTable(res) {
+                const tableHTML = window.JSON5_TO_TABLE.generateHTMLTable(this.showData)
+                let tableBox = document.getElementById("multiTabel")
+                console.log(tableHTML)
+                tableBox.innerHTML = tableHTML
             }
           }
         })
