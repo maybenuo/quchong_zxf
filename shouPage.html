@@ -11,11 +11,15 @@
             <div id="multilevelList">
                 <el-tree :data="showData" :props="defaultProps"></el-tree>
             </div>
+            <el-button @click="createTable" >生成table</el-button>
+            <div id="multiTabel" style="width: 100%;"></div>
         </div>
     </body>
     <script src="https://cdn.bootcss.com/vue/2.5.2/vue.min.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="./node_modules/json5-to-table.js"></script>
     <script>
+        // import { jsonToHTMLTable } from "./node_modules/json5-to-table.js"
         new Vue({
           el: '#app',
           data: function() {
@@ -27,7 +31,8 @@
                 defaultProps: {
                     children:'children',
                     label: this.treeNodeLabel
-                }
+                },
+                canGenerateTabel: JSON.stringify(this.finalResult) == "{}"
             }
           },
           mounted() {
@@ -70,6 +75,15 @@
             treeNodeLabel(data, node) {
                 let num = data.children && data.children.length ? `(${data.children.length})` : ''
                 return `${data.label}${num}`
+            },
+            // 将JSON数据转化成html table
+            createTable(res) {
+                // const tableHTML = window.JSON5_TO_TABLE.generateHTMLTable(this.finalResult)
+                // let tableBox = document.getElementById("multiTabel")
+                // console.log(tableHTML)
+                // tableBox.innerHTML = tableHTML
+
+                const tableHTML = window.JSON5_TO_TABLE.generateExcel(this.finalResult, "./test.xlsx")
             }
           }
         })

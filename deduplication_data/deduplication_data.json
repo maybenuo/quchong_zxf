@@ -1,1 +1,88 @@
-{"Metabolism": {" Global and overview maps": ["K00803 evm.model.Chr03.995", "K02433 evm.model.Chr02.695", "K11540 evm.model.Chr01.1045"], " Lipid metabolism": ["K00803 evm.model.Chr03.995"], " Nucleotide metabolism": ["K11540 evm.model.Chr01.1045"], " Amino acid metabolism": ["K11540 evm.model.Chr01.1045"]}, "Genetic Information Processing": {" Transcription": ["K12816 evm.model.Chr03.114", "K12855 evm.model.Chr03.832"], " Translation": ["K02433 evm.model.Chr02.695", "K14554 evm.model.Chr05.87"], " Folding, sorting and degradation": ["K11519 evm.model.Chr09.236"], " Replication and repair": ["K10803 evm.model.Chr08.253"]}, "Environmental Information Processing": {" Signal transduction": ["K04428 evm.model.Chr06.18", "K05853 evm.model.Chr01.500", "K08334 evm.model.Chr09.232", "K15174 evm.model.Chr05.64"]}, "Cellular Processes": {" Transport and catabolism": ["K00803 evm.model.Chr03.995", "K08334 evm.model.Chr09.232"], " Cell growth and death": ["K02605 evm.model.Chr02.754", "K06114 evm.model.Chr06.292", "K08334 evm.model.Chr09.232"]}, "Organismal Systems": {" Immune system": ["K04428 evm.model.Chr06.18"], " Endocrine system": ["K04428 evm.model.Chr06.18", "K05853 evm.model.Chr01.500", "K19514 evm.model.Chr05.728"], " Circulatory system": ["K05853 evm.model.Chr01.500"], " Digestive system": ["K05853 evm.model.Chr01.500"]}, "Human Diseases": {" Cancer: overview": ["K06515 evm.model.Chr01.367"], " Infectious disease: viral": ["K08334 evm.model.Chr09.232"], " Infectious disease: bacterial": ["K08334 evm.model.Chr09.232"], " Neurodegenerative disease": ["K05853 evm.model.Chr01.500", "K08334 evm.model.Chr09.232", "K11519 evm.model.Chr09.236"], " Cardiovascular disease": ["K05853 evm.model.Chr01.500"]}}
+{
+    "Metabolism": {
+        " Global and overview maps": [
+            "K00803 evm.model.Chr03.995",
+            "K02433 evm.model.Chr02.695",
+            "K11540 evm.model.Chr01.1045"
+        ],
+        " Lipid metabolism": [
+            "K00803 evm.model.Chr03.995"
+        ],
+        " Nucleotide metabolism": [
+            "K11540 evm.model.Chr01.1045"
+        ],
+        " Amino acid metabolism": [
+            "K11540 evm.model.Chr01.1045"
+        ]
+    },
+    "Genetic Information Processing": {
+        " Transcription": [
+            "K12816 evm.model.Chr03.114",
+            "K12855 evm.model.Chr03.832"
+        ],
+        " Translation": [
+            "K02433 evm.model.Chr02.695",
+            "K14554 evm.model.Chr05.87"
+        ],
+        " Folding, sorting and degradation": [
+            "K11519 evm.model.Chr09.236"
+        ],
+        " Replication and repair": [
+            "K10803 evm.model.Chr08.253"
+        ]
+    },
+    "Environmental Information Processing": {
+        " Signal transduction": [
+            "K04428 evm.model.Chr06.18",
+            "K05853 evm.model.Chr01.500",
+            "K08334 evm.model.Chr09.232",
+            "K15174 evm.model.Chr05.64"
+        ]
+    },
+    "Cellular Processes": {
+        " Transport and catabolism": [
+            "K00803 evm.model.Chr03.995",
+            "K08334 evm.model.Chr09.232"
+        ],
+        " Cell growth and death": [
+            "K02605 evm.model.Chr02.754",
+            "K06114 evm.model.Chr06.292",
+            "K08334 evm.model.Chr09.232"
+        ]
+    },
+    "Organismal Systems": {
+        " Immune system": [
+            "K04428 evm.model.Chr06.18"
+        ],
+        " Endocrine system": [
+            "K04428 evm.model.Chr06.18",
+            "K05853 evm.model.Chr01.500",
+            "K19514 evm.model.Chr05.728"
+        ],
+        " Circulatory system": [
+            "K05853 evm.model.Chr01.500"
+        ],
+        " Digestive system": [
+            "K05853 evm.model.Chr01.500"
+        ]
+    },
+    "Human Diseases": {
+        " Cancer: overview": [
+            "K06515 evm.model.Chr01.367"
+        ],
+        " Infectious disease: viral": [
+            "K08334 evm.model.Chr09.232"
+        ],
+        " Infectious disease: bacterial": [
+            "K08334 evm.model.Chr09.232"
+        ],
+        " Neurodegenerative disease": [
+            "K05853 evm.model.Chr01.500",
+            "K08334 evm.model.Chr09.232",
+            "K11519 evm.model.Chr09.236"
+        ],
+        " Cardiovascular disease": [
+            "K05853 evm.model.Chr01.500"
+        ]
+    }
+}
